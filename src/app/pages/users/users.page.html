@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Potential Hires</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col col-md-6 col-lg-4 col-12 *ngFor="let user of users; trackBy:identify">
+        <ion-card>
+          <img class="avatar" [src]="user.picture.large" alt="">
+          <ion-card-content>
+            <h2>{{user.name.first | titlecase }} {{user.name.last | titlecase}}</h2>
+            <h3>{{user.email}}</h3>
+          </ion-card-content>
+          <ion-item (click)="naviagte(user)">
+            View {{user.name.first | titlecase}}'s details
+            <ion-note slot="end">
+              <ion-icon name="arrow-forward"></ion-icon>
+            </ion-note>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="usePlaceholder">
+      <ion-col col-md-6 col-lg-4 col-12 *ngFor="let place of holder">
+        <ion-card>
+          <img class="avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+          <ion-card-content>
+            <h2 class="fake-text"></h2>
+            <h3 class="fake-text"></h3>
+          </ion-card-content>
+          <ion-item>
+            <ion-label>
+              <p class="fake-text"></p>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

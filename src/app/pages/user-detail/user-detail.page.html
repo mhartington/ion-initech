@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{user.name.first | titlecase}} {{user.name.last | titlecase}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorites()">
+        <ion-icon slot="icon-only" [name]="favoriteIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-lg-8 offset-lg-2>
+        <ion-card>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12 col-md-6>
+                  <img class="avatar" [src]="user.picture.large" alt="">
+                </ion-col>
+                <ion-col>
+                  <h1>{{user.name.first | titlecase}} {{user.name.last | titlecase}}</h1>
+                  <h3>{{user.email}}</h3>
+                  <h3>{{user.location.city}}, {{user.location.state}}</h3>
+                  <ion-item (click)="openMail()">
+                    <ion-label>Reach Out?</ion-label>
+                    <ion-icon slot="end" name="copy"></ion-icon>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
