@@ -1,6 +1,0 @@
-{
-  "appId": "com.super.app",
-  "appName": "SuperApp",
-  "bundledWebRuntime": false,
-  "webDir": "www"
-}
