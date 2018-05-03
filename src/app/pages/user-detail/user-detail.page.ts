@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Events, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-
+declare var cordova: any;
 @Component({
-  selector: 'user-detail',
+  selector: 'app-user-detail',
   templateUrl: './user-detail.page.html',
   styleUrls: ['./user-detail.page.scss']
 })
@@ -20,6 +20,9 @@ export class UserDetailPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    if (window['cordova']) {
+      window.open = cordova.InAppBrowser.open;
+    }
     this.user = JSON.parse(this.route.snapshot.params.user);
     this.checkStorage();
   }
@@ -59,7 +62,12 @@ export class UserDetailPage implements OnInit {
       this.events.publish('userRemoved', this.user);
     }
   }
-  openMail(){
-    window.open(`mailto:${this.user.email }?Subject=Potential%20for%20a%20new%20career%3F&Body=Hello%20there%21%20`, '_blank')
+  openMail() {
+    window.open(
+      `mailto:${
+        this.user.email
+      }?Subject=Potential%20for%20a%20new%20career%3F&Body=Hello%20there%21%20`,
+      '_system'
+    );
   }
 }

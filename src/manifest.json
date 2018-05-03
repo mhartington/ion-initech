@@ -2,7 +2,7 @@
   "name": "IniTech",
   "short_name": "IniTech",
   "theme_color": "#3880ff",
-  "background_color": "#fafafa",
+  "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
