@@ -36,4 +36,6 @@ import { env } from '../environment/environment';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+
+}

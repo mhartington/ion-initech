@@ -63,11 +63,17 @@ export class UserDetailPage implements OnInit {
     }
   }
   openMail() {
-    window.open(
-      `mailto:${
+    if (window['cordova']) {
+      window.open(
+        `mailto:${
+          this.user.email
+        }?Subject=Potential%20for%20a%20new%20career%3F&Body=Hello%20there%21%20`,
+        '_system'
+      );
+    } else {
+      window.location.href = `mailto:${
         this.user.email
-      }?Subject=Potential%20for%20a%20new%20career%3F&Body=Hello%20there%21%20`,
-      '_system'
-    );
+      }?Subject=Potential%20for%20a%20new%20career%3F&Body=Hello%20there%21%20`;
+    }
   }
 }

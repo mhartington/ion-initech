@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -25,14 +25,10 @@
   <meta name="Description" content="Initech">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#3880ff">
-  <script src="cordova.js"></script>
 </head>
 
 <body>
   <app-root></app-root>
-
-
-
 </body>
 
 </html>

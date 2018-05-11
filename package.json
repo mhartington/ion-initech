@@ -39,6 +39,7 @@
     "cordova-plugin-ionic-webview": "latest",
     "cordova-plugin-splashscreen": "latest",
     "cordova-plugin-statusbar": "latest",
+    "cordova-plugin-whitelist": "1.3.3",
     "core-js": "^2.5.3",
     "rxjs": "6.0.0-uncanny-rc.7",
     "zone.js": "^0.8.26"
@@ -66,7 +67,8 @@
   },
   "cordova": {
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "cordova-plugin-ionic-webview": {},
@@ -74,7 +76,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-whitelist": {}
     }
   }
 }

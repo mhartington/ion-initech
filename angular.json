@@ -26,7 +26,12 @@
                 "input": "node_modules/@ionic/angular/dist/ionic",
                 "output": "./ionic"
               },
-              "src/manifest.json"
+              "src/manifest.json",
+              {
+                "glob": "**/*",
+                "input": "/Users/mhartington/GitHub/super-app/platforms/android/platform_www",
+                "output": "./"
+              }
             ],
             "styles": [
               {
